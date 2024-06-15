@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wishlist-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wishlist
+  template:
+    metadata:
+      labels:
+        app: wishlist
+    spec:
+      containers:
+      - name: wishlist
+        image: palak8/wishlist3:latest
+        ports:
+        - containerPort: 5002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: wishlist-service
+spec:
+  ports:
+  - port: 80
+    targetPort: 5002
+  selector:
+    app: wishlist
+
