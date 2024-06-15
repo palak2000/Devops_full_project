@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <p>Product ID: {{ product_id }}</p>
+    <p>Product Name: {{ product_name }}</p>
+    <p>Price: ${{ price }}</p>
+    <p>Description: {{ description }}</p>
+    <a href="/wishlist/add/{{ product_id }}">Add to Wishlist</a>
+    <br>
+    <a href="/wishlist">View Wishlist</a>
+    <br>
+    <a href="/cart/add/{{ product_id }}">Add to Cart</a>
+    <br>
+    <a href="/cart">View Cart</a>
+</body>
+</html>
+
